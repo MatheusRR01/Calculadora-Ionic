@@ -6,25 +6,27 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page {
+
+  public valor1: number;
+  public valor2: number;
+  public resultado: number;
 
   constructor(private alertController: AlertController) {}
 
-  valor1=" ";
-  valor2=" ";
-  Resultado=" ";
-
-  async presentAlert() {
+  async alertaSoma() {
+    this.resultado= this.valor1 + this.valor2;
     const alert = await this.alertController.create({
       header: 'Resultado:',
       message: `<strong>Valor 1: ${this.valor1} </strong><br>
       <strong>Valor 2: ${this.valor2}</strong><br>
-      <strong>Resultado: ${this.Resultado}<br></strong>`,
+      <strong>Resultado: ${this.resultado}<br></strong>`,
       buttons: ['OK'],
     });
     await alert.present();
   }
-  async Limpar() {
+  async limpar() {
 
   }
 }
