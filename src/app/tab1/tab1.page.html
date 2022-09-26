@@ -20,27 +20,27 @@
         <ion-button expand="full" (click)="alertaSoma()">+</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button expand="full" >-</ion-button>
+        <ion-button expand="full" (click)="alertaSubtracao()" >-</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button expand="full" >*</ion-button>
+        <ion-button expand="full" (click)="alertaMultiplicacao()">*</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button expand="full" >/</ion-button>
+        <ion-button expand="full" (click)="alertaDivisao()">/</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6">
-        <ion-button expand="full">Maior</ion-button>
+        <ion-button expand="full" (click)="alertaMaior()">Maior</ion-button>
       </ion-col>
       <ion-col >
-        <ion-button expand="full">Menor</ion-button>
+        <ion-button expand="full" (click)="alertaMenor()">Menor</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-item>
-    <ion-label position="default">Resultado: </ion-label>
-    <ion-input></ion-input>
+    <ion-label position="default">Resultado:</ion-label>
+    <ion-input [{resultado}]></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="default">Conta: </ion-label>

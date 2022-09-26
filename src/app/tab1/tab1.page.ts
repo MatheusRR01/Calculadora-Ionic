@@ -7,16 +7,19 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 
+
 export class Tab1Page {
 
-  public valor1: number;
-  public valor2: number;
-  public resultado: number;
+  valor1="";
+  valor2="";
+  resultado="";
+  conta= "";
 
   constructor(private alertController: AlertController) {}
 
   async alertaSoma() {
-    this.resultado= this.valor1 + this.valor2;
+
+    this.resultado=(parseFloat(this.valor1) + parseFloat(this.valor2)).toString();
     const alert = await this.alertController.create({
       header: 'Resultado:',
       message: `<strong>Valor 1: ${this.valor1} </strong><br>
@@ -26,7 +29,89 @@ export class Tab1Page {
     });
     await alert.present();
   }
-  async limpar() {
+
+  async alertaSubtracao() {
+
+    this.resultado=(parseFloat(this.valor1) - parseFloat(this.valor2)).toString();
+    const alert = await this.alertController.create({
+      header: 'Resultado:',
+      message: `<strong>Valor 1: ${this.valor1} </strong><br>
+      <strong>Valor 2: ${this.valor2}</strong><br>
+      <strong>Resultado: ${this.resultado}<br></strong>`,
+      buttons: ['OK'],
+    });
+    await alert.present();
+    
+  }
+
+  async alertaDivisao() {
+
+    this.resultado=(parseFloat(this.valor1) / parseFloat(this.valor2)).toString();
+    const alert = await this.alertController.create({
+      header: 'Resultado:',
+      message: `<strong>Valor 1: ${this.valor1} </strong><br>
+      <strong>Valor 2: ${this.valor2}</strong><br>
+      <strong>Resultado: ${this.resultado}<br></strong>`,
+      buttons: ['OK'],
+    });
+    await alert.present();
+    
+  }
+
+  async alertaMultiplicacao() {
+
+    this.resultado=(parseFloat(this.valor1) * parseFloat(this.valor2)).toString();
+    const alert = await this.alertController.create({
+      header: 'Resultado:',
+      message: `<strong>Valor 1: ${this.valor1} </strong><br>
+      <strong>Valor 2: ${this.valor2}</strong><br>
+      <strong>Resultado: ${this.resultado}<br></strong>`,
+      buttons: ['OK'],
+    });
+    await alert.present();
+    
+  }
+  
+  calcularMenor(){
+    if (parseFloat(this.valor1) < (parseFloat(this.valor2))){
+      this.resultado = this.valor1
+    }else if (parseFloat(this.valor1) > (parseFloat(this.valor2))){
+      this.resultado = this.valor2
+    }else if (parseFloat(this.valor1) == (parseFloat(this.valor2))){
+      this.resultado="Ambos são iguais!"
+    };
 
   }
+
+  calcularMaior(){
+    if (parseFloat(this.valor1) > (parseFloat(this.valor2))){
+      this.resultado = this.valor1
+    }else if (parseFloat(this.valor1) < (parseFloat(this.valor2))){
+      this.resultado = this.valor2
+    }else if (parseFloat(this.valor1) == (parseFloat(this.valor2))){
+      this.resultado="Ambos são iguais!"
+    };
+
+  }
+
+  async alertaMaior() {
+    this.calcularMaior();
+    const alert = await this.alertController.create({
+      header: `${this.resultado}`
+    });
+    await alert.present();
+    
+  }
+
+  async alertaMenor() {
+    this.calcularMenor();
+    const alert = await this.alertController.create({
+      header: `${this.resultado}`
+    });
+    await alert.present();
+    
+  }
+  
 }
+
+
