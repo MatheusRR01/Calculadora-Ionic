@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
       <ion-title >Calculadora</ion-title>
-        <ion-button slot="end">C</ion-button>
+        <ion-button slot="end" (click)="limpar()">C</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -40,10 +40,10 @@
   </ion-grid>
   <ion-item>
     <ion-label position="default">Resultado:</ion-label>
-    <ion-input [{resultado}]></ion-input>
+    <ion-input>{{resultado}}</ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="default">Conta: </ion-label>
-    <ion-input ></ion-input>
+    <ion-input> {{conta}}</ion-input>
   </ion-item>
 </ion-content>
