@@ -1,17 +1,127 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab 2
+      Calculadora 2
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" color="medium">
+  <ion-item color="medium">
+    <ion-label position="stacked" class="letra">Operação</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item color="medium">
+    <ion-label position="default" class="letra1">Resultado: </ion-label>
+  </ion-item>
+  <ion-grid>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-row>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">MC</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">MR</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">M+</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">M-</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">MS</ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button size="block" color="light" class="letra" fill="outline">Mˇ</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">%</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">CE</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">C</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">
+          <ion-icon name="backspace-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">1/x</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">X²</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">2√X</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">÷</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">7</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">8</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">9</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">X</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">4</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">5</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">6</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">-</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">1</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">2</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">3</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="cinza" class="letra">+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">±</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">0</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="light" class="letra">,</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button size="full" color="primary" class="letra">=</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
