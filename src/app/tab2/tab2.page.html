@@ -7,12 +7,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="medium">
-  <ion-item color="medium">
+  <ion-item lines="full" color="medium">
     <ion-label position="stacked" class="letra">Operação</ion-label>
-    <ion-input></ion-input>
+    <ion-input class="ion-text-right" [(ngModel)]="operacao"></ion-input>
   </ion-item>
-  <ion-item color="medium">
-    <ion-label position="default" class="letra1">Resultado: </ion-label>
+  <ion-item lines="full" color="medium">
+    <ion-label position="default" class="letra1"><strong>Resultado:</strong></ion-label>
+    <ion-label class="ion-text-right resultado">{{resultado}}</ion-label>
   </ion-item>
   <ion-grid>
 
@@ -41,13 +42,13 @@
         <ion-button size="full" color="cinza" class="letra">%</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">CE</ion-button>
+        <ion-button (click)="limparCE()" size="full" color="cinza" class="letra">CE</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">C</ion-button>
+        <ion-button (click)="limparC()" size="full" color="cinza" class="letra">C</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">
+        <ion-button (click)="apagarCaracter()" size="full" color="cinza" class="letra">
           <ion-icon name="backspace-outline"></ion-icon>
         </ion-button>
       </ion-col>
@@ -63,49 +64,49 @@
         <ion-button size="full" color="cinza" class="letra">2√X</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">÷</ion-button>
+        <ion-button (click)="adicionarValor('/')" size="full" color="cinza" class="letra">÷</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">7</ion-button>
+        <ion-button (click)="adicionarValor('7')" size="full" color="light" class="letra">7</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">8</ion-button>
+        <ion-button (click)="adicionarValor('8')" size="full" color="light" class="letra">8</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">9</ion-button>
+        <ion-button (click)="adicionarValor('9')" size="full" color="light" class="letra">9</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">X</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">4</ion-button>
-      </ion-col>
-      <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">5</ion-button>
-      </ion-col>
-      <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">6</ion-button>
-      </ion-col>
-      <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">-</ion-button>
+        <ion-button (click)="adicionarValor('*')" size="full" color="cinza" class="letra">X</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">1</ion-button>
+        <ion-button (click)="adicionarValor('4')" size="full" color="light" class="letra">4</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">2</ion-button>
+        <ion-button (click)="adicionarValor('5')" size="full" color="light" class="letra">5</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">3</ion-button>
+        <ion-button (click)="adicionarValor('6')" size="full" color="light" class="letra">6</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="cinza" class="letra">+</ion-button>
+        <ion-button (click)="adicionarValor('-')" size="full" color="cinza" class="letra">-</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button (click)="adicionarValor('1')" size="full" color="light" class="letra">1</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="adicionarValor('2')" size="full" color="light" class="letra">2</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="adicionarValor('3')" size="full" color="light" class="letra">3</ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="adicionarValor('+')" size="full" color="cinza" class="letra">+</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -113,10 +114,10 @@
         <ion-button size="full" color="light" class="letra">±</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">0</ion-button>
+        <ion-button (click)="adicionarValor('0')" size="full" color="light" class="letra">0</ion-button>
       </ion-col>
       <ion-col size="3">
-        <ion-button size="full" color="light" class="letra">,</ion-button>
+        <ion-button (click)="adicionarValor('.')" size="full" color="light" class="letra">,</ion-button>
       </ion-col>
       <ion-col size="3">
         <ion-button size="full" color="primary" class="letra">=</ion-button>
