@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { evaluate } from 'mathjs';
+import { AlertController } from '@ionic/angular';
+import { evaluate, number } from 'mathjs';
+import { IMemoria } from '../Models/IMemoria.model';
+
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +16,40 @@ export class Tab2Page {
   caracter = true;
   caracteres = ['.', '/', '*', '+', '-'];
 
-  constructor() {}
+  memoria: IMemoria[] = [];
+
+  constructor(private alertController: AlertController) {}
+
+  async presentAlert(titulo: string, mensagem: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: mensagem,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  adicionarMemoria(){
+    if(this.operacao !='' && this.resultado !=''){
+      const memoria: IMemoria = {
+        operacao: this.operacao,
+        resultado: Number(this.resultado)
+      };
+      this.memoria.push(memoria);
+    }else if (this.operacao !='' && this.resultado==''){
+      this.realizarOperacao();
+
+      const memoria: IMemoria = {
+        operacao: this.operacao,
+        resultado: Number(this.resultado)
+      };
+      this.memoria.push(memoria);
+    }else{
+      this.presentAlert('Atenção!', 'Não há nada para salvar!');
+    }
+    console.log(this.memoria)
+  }
 
   realizarOperacao(){
     try{
@@ -62,6 +98,22 @@ export class Tab2Page {
     } else {
       this.numero = false;
     }
+  }
+  
+  limpaMemoria(){
+
+  }
+  
+  rechamaMemoria(){
+
+  }
+
+  adicionaMemoria(){
+
+  }
+
+  subtraiMemoria(){
+
   }
 
 }
